@@ -3,12 +3,7 @@
 def factorize(n):
   res = []
   p = 0
-  while n % 2 == 0:
-    p += 1
-    n /= 2
-  if p != 0:
-    res.append([2, p])
-  i = 3
+  i = 2
   while n > 1:
     p = 0
     while n % i == 0:
@@ -16,7 +11,7 @@ def factorize(n):
       p += 1
     if p != 0:
       res.append([i, p])
-    i += 2
+    i += 1
   return res
 
 n = int(input())
