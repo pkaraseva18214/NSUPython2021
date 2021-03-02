@@ -13,7 +13,9 @@ try:
         occurrences.append(result - 2)
         result = str.find(text, inp, result + 1)
 
-    print('Found {n} results.\nPositions: {p} ...'.format(n=len(occurrences),
-                                                          p=' '.join([str(value) for value in occurrences[:5]])))
+    oc_len = len(occurrences)
+    print('Found {n} results.\nPositions: {p}'.format(n=oc_len,
+                                                      p=' '.join([str(value) for value in occurrences[:5]]) + ' ...'
+                                                      if oc_len > 0 else 'No positions'))
 except FileNotFoundError:
     print('Can not find file with given path.')
