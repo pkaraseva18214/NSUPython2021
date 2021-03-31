@@ -17,5 +17,5 @@ try:
     print('Found {n} results.\nPositions: {p}'.format(n=oc_len,
                                                       p=' '.join([str(value) for value in occurrences[:5]]) + ' ...'
                                                       if oc_len > 0 else 'No positions'))
-except FileNotFoundError:
-    print('Can not find file with given path.')
+except Exception as e:
+    print('Caught an exception: ' + str(e))
