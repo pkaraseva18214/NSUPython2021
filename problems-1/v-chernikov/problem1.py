@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
+from functools import reduce
+
 
 def cusum(numbers):
-    res = []
-    csum = 0
-    for num in numbers:
-        csum += num
-        res.append(csum)
-    return res
+    return reduce(lambda csum, x: csum.append(csum[len(csum) - 1] + x) or csum, numbers, [0])
 
 
 if __name__ == '__main__':
-    print(cusum(map(int, input().split(' '))))
+    try:
+        print(cusum(map(int, input().split(' '))))
+    except ValueError:
+        print("Illegal input, try sequence of integers separated with spaces")
+
