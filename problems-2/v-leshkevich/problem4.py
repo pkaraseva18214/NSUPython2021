@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 
 try:
     path = input('Enter path to file.\n')
@@ -18,4 +19,4 @@ try:
                                                       p=' '.join([str(value) for value in occurrences[:5]]) + ' ...'
                                                       if oc_len > 0 else 'No positions'))
 except Exception as e:
-    print('Caught an exception: ' + str(e))
+    print('Caught an exception: ' + str(e), file=sys.stderr)
