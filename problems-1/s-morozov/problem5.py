@@ -14,5 +14,6 @@ def factorize(n):
     i += 1
   return res
 
-n = int(input())
-print(factorize(n))
+if __name__ == '__main__':
+  n = int(input())
+  print(factorize(n))
