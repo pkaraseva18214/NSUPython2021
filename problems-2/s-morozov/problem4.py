@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 
-seq = input('Enter sequence to search for.\n')
+import sys
+
+if len(sys.argv) == 1:
+  seq = input('Enter sequence to search for.\n')
+else:
+  seq = sys.argv[1]
+
 
 with open('pi.txt', 'r') as file:
   pi = file.read().replace('\n', '')
