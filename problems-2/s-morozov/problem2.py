@@ -27,8 +27,8 @@ if __name__ == "__main__":
           print(f"Duplicate entry in dictionary: {word}", file=sys.stderr)
           exit()
         dictionary[word] = translations.split(", ")
-      res = reverse_dict(dictionary)
-      for word, translations in sorted(res.items()):
-        print(f"{word} - {', '.join(sorted(translations))}")
+    res = reverse_dict(dictionary)
+    for word, translations in sorted(res.items()):
+      print(f"{word} - {', '.join(sorted(translations))}")
   except IOError as e:
     print(f"Unable to open file: {str(e)}", file=sys.stderr)
