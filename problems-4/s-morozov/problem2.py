@@ -26,7 +26,7 @@ if __name__ == "__main__":
   try:
     with open(args.filename, "r") as file:
       content = file.read()
-      print(translate(content, args.old_chars, args.new_chars, args.delete if args.delete else ""))
+    print(translate(content, args.old_chars, args.new_chars, args.delete if args.delete else ""))
   except ValueError as e:
     print(f"Incorrect input: {str(e)}", file=sys.stderr)
   except IOError as e:
