@@ -14,6 +14,11 @@ class MyTestCase(unittest.TestCase):
         v1 = Vector(4, 3, 10, 11, 54, 1, 20)
         self.assertEqual(v1.get_element(4), 54)
 
+    def test_3_with_exception(self):
+        v1 = Vector(4, 3, 10, 11, 54)
+        with self.assertRaises(IndexError):
+            v1.get_element(5)
+
     def test_4(self):
         v1 = Vector(4, 3, 10, 11, 54, 1, 20)
         self.assertEqual(v1.multiply_by_scalar(10), [40, 30, 100, 110, 540, 10, 200])
