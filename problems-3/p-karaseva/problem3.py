@@ -27,7 +27,7 @@ class Vector:
             l += x ** 2
         return math.sqrt(l)
 
-    def multiply_by_const(self, num):
+    def multiply_by_scalar(self, num):
         added = list()
         for n in self.values:
             added.append(n * num)
