@@ -12,12 +12,18 @@ parser.add_argument("-d", "--delete", help="symbols to delete")
 args = parser.parse_args()
 
 if len(args.replaced_symbols) != len(args.new_symbols):
-    raise ValueError('The number of replaced_symbols and new_symbols does not match.')
+    try:
+        raise ValueError()
+    except ValueError as e:
+        sys.stderr.write('The number of replaced_symbols and new_symbols does not match.')
 
 replaced_symbols_unique = list()
 for symbol in args.replaced_symbols:
     if symbol in replaced_symbols_unique:
-        raise ValueError('Symbols to be replaced must be different.')
+        try:
+            raise ValueError()
+        except ValueError as e:
+            sys.stderr.write('Symbols to be replaced must be different.')
     else:
         replaced_symbols_unique.append(symbol)
 
@@ -58,4 +64,3 @@ except OSError as e:
     sys.stderr.write(str(e))
 finally:
     file_source.close()
-
