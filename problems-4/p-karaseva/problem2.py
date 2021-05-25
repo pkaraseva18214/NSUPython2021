@@ -50,9 +50,12 @@ try:
         except OSError as e:
             sys.stderr.write("Cannot open file to write the result. Check if this file exists or name of the file is "
                              "right.\n")
+            sys.stderr.write(str(e))
         finally:
             file_res.close()
 except OSError as e:
     sys.stderr.write("Cannot open file with input data. Check if this file exists or name of the file is right.\n")
+    sys.stderr.write(str(e))
 finally:
     file_source.close()
+
